@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Game Developer Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Inter, sans-serif;
+      background: #0b0f1a;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .about {
+      margin-bottom: 40px;
+    }
+
+    .about-container {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      flex-wrap: wrap;
+      background: #121a2b;
+      padding: 20px;
+      border-radius: 16px;
+    }
+
+    .about-img img {
+      width: 160px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #22d3ee;
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h2 {
+      margin: 0 0 10px;
+    }
+
+    .about-text p {
+      color: #bbb;
+      line-height: 1.6;
+    }
+
+    /* BUTTONS */
+    .btn {
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 8px;
+      display: inline-block;
+      margin-right: 10px;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .whatsapp {
+      background: #25D366;
+      color: white;
+    }
+
+    .resume {
+      background: #22d3ee;
+      color: black;
+    }
+
+    /* PROJECTS */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #121a2b;
+      border-radius: 16px;
+      padding: 15px;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .game-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    h3 {
+      margin: 10px 0;
+    }
+
+    .meta {
+      color: #aaa;
+      font-size: 14px;
+    }
+
+    .tags {
+      margin-top: 10px;
+    }
+
+    .tag {
+      display: inline-block;
+      padding: 4px 8px;
+      background: #1f2a44;
+      border-radius: 8px;
+      margin: 2px;
+      font-size: 12px;
+    }
+
+    .desc {
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .video-container {
+      margin-top: 10px;
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 10px;
+    }
+
+    .video-container iframe {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <h1>Portfolio</h1>
+
+  <!-- ABOUT SECTION -->
+  <section class="about">
+    <div class="about-container">
+
+      <div class="about-img">
+        <img src="images/profile.jpg" alt="Profile Image">
+      </div>
+
+      <div class="about-text">
+        <h2>Senior Unity Game Developer</h2>
+
+        <p>
+          I am a Senior Unity Game Developer with <strong>9+ years of professional experience</strong>
+          in designing and developing high-quality 2D, 3D simulation, and FPS games.
+        </p>
+
+        <p>
+          I specialize in <strong>C# programming, Unity engine architecture, gameplay systems, and optimization</strong>,
+          delivering scalable and engaging game experiences across mobile, PC, and VR platforms.
+        </p>
+
+        <!-- BUTTONS -->
+        <div>
+          <a href="https://wa.me/923001234567" target="_blank" class="btn whatsapp">
+            WhatsApp Me
+          </a>
+
+          <a href="resume.pdf" download class="btn resume">
+            Download Resume
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXPERIENCE SECTION -->
+  <section class="about">
+    <div class="about-container">
+      <div class="about-text">
+
+        <h2>Experience</h2>
+
+        <p><strong>Senior Unity Game Developer – Pixarun Studio</strong><br>
+        2020 – Present</p>
+
+        <p>
+          - Developed 2D, 3D, FPS, and Multiplayer games<br>
+          - Expertise in Photon, Fusion, Fish-Networking<br>
+          - Implemented Ads, IAP, Firebase, PlayFab systems<br>
+          - Optimized games for Android, iOS, and PC
+        </p>
+
+        <p><strong>Unity Developer</strong><br>
+        2017 – 2020</p>
+
+        <p>
+          - Built multiple mobile games from scratch<br>
+          - Designed gameplay systems and UI/UX<br>
+          - Worked on physics, AI, and animations
+        </p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <div id="projects" class="grid"></div>
+
+</div>
+
+<script>
+
+const projects = [
+  {
+    title: "Exorium Spaceship Shooter",
+    image: "images/SpaceShip.png",
+    video: "https://www.youtube.com/embed/iCFVcl1c7z4",
+    overview: "Multiplayer space combat game with competitive gameplay.",
+    tech: ["Unity", "C#", "Photon Pun2","Shader Graph"],
+    features: ["Weapon system", "Multiplayer","Lobby system","Spaceship Selection"]
+  },
+  {
+    title: "Cyber Battle",
+    image: "images/cyber.jpg",
+    video: "",
+    overview: "NFT based space shooter game.",
+    tech: ["Unity", "Web3"],
+    features: ["NFT ships", "Wallet login"]
+  }
+];
+
+function renderProjects() {
+  const container = document.getElementById("projects");
+
+  container.innerHTML = projects.map(p => `
+    <div class="card">
+
+      <img src="${p.image}" class="game-img" />
+
+      <h3>${p.title}</h3>
+
+      <div class="meta">${p.overview}</div>
+
+      <div class="tags">
+        ${p.tech.map(t => `<span class="tag">${t}</span>`).join("")}
+      </div>
+
+      <ul class="desc">
+        ${p.features.map(f => `<li>${f}</li>`).join("")}
+      </ul>
+
+      ${p.video ? `
+        <div class="video-container">
+          <iframe src="${p.video}" frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+        </div>
+      ` : ""}
+
+    </div>
+  `).join("");
+}
+
+renderProjects();
+
+</script>
+
+</body>
+</html>
