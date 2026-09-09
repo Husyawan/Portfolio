@@ -108,6 +108,8 @@
       border-radius: 16px;
       padding: 15px;
       transition: transform 0.3s;
+      display: flex;
+      flex-direction: column;
     }
     .card:hover { transform: translateY(-5px); }
 
@@ -129,7 +131,7 @@
       margin: 2px;
       font-size: 12px;
     }
-    .desc { margin-top: 10px; font-size: 14px; }
+    .desc { margin-top: 10px; font-size: 14px; flex-grow: 1; }
 
     .video-container {
       margin-top: 10px;
@@ -143,6 +145,8 @@
       position: absolute;
       width: 100%;
       height: 100%;
+      left: 0;
+      top: 0;
     }
   </style>
 </head>
@@ -196,7 +200,7 @@
       <ul class="exp-list" style="width:100%;">
 
         <li class="exp-item">
-          <h3>Senior Unity Developer — Tehu Studios</h3>
+          <h3>Senior Unity Developer — Fiverr Freelancer</h3>
           <div class="exp-meta">July 2024 – Present &nbsp;|&nbsp; Remote</div>
           <ul>
             <li>Delivered diverse projects for international clients — multiplayer, AR/VR, and optimization.</li>
@@ -250,16 +254,6 @@
             <li>Navmesh AI, joints, physics, animator, ads integration, APK size optimization.</li>
           </ul>
         </li>
-
-        <li class="exp-item">
-          <h3>Unity Developer — Fate Softworks</h3>
-          <div class="exp-meta">Mar 2017 – Mar 2019</div>
-          <ul>
-            <li>2D puzzle games, platformers, 3D simulation games (RCC Controller), space shooter 3D.</li>
-            <li>AR implementation via Vuforia, iTween, 2D Toolkit, ads integration, APK optimization.</li>
-          </ul>
-        </li>
-
       </ul>
     </div>
   </section>
@@ -272,6 +266,30 @@
 
 <script>
 const projects = [
+  {
+    title: "Car Fighting Arena",
+    image: "images/Car Fighting Arena.png",
+    video: "https://www.youtube.com/embed/-3sYiJjYuyE",
+    overview: "Fast-paced vehicular combat game set in dynamic battle arenas.",
+    tech: ["Unity 3D", "C#", "Vehicle Physics", "Combat AI", "Particle Systems"],
+    features: ["Customizable Combat Vehicles", "Arena Destruction & Hazards", "Intelligent Opponent AI", "Explosive Weapon Systems"]
+  },
+  {
+    title: "Alien Robot FPS",
+    image: "images/Alien Robot Fps.jpg",
+    video: "https://www.youtube.com/embed/tyjKr6HNh_U",
+    overview: "Action-packed sci-fi first-person shooter fighting robotic and alien waves.",
+    tech: ["Unity 3D", "C#", "NavMesh AI", "Weapon System", "Animation Rigging"],
+    features: ["Responsive FPS Controller", "Diverse Enemy AI Behaviors", "Weapon Arsenal & Recoil", "Rescue & Mission Objectives"]
+  },
+  {
+    title: "Car Racing Game (Mega Beam Stunts)",
+    image: "images/Mega BeamStunts.jpg",
+    video: "https://www.youtube.com/embed/ZRoh62B-z1o",
+    overview: "High-octane stunt racing game featuring ramps, loops, and realistic physics.",
+    tech: ["Unity 3D", "C#", "Custom Vehicle Controller", "Optimization"],
+    features: ["Extreme Stunt Tracks", "Realistic Crash & Drift Physics", "Vehicle Selection & Garage", "High-Speed Performance Optimization"]
+  },
   {
     title: "Exorium Spaceship Shooter",
     image: "images/SpaceShip.png",
