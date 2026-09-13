@@ -267,9 +267,44 @@
 <script>
 const projects = [
   {
+    title: "Beat Em Up",
+    image: "images/BeatEmUp.jpg",
+    videos: ["https://www.youtube.com/embed/YOUR_BEAT_EM_UP_YOUTUBE_ID"],
+    overview: "Classic arcade-style 2D/2.5D side-scrolling fighting game with fluid combat mechanics and enemy wave progression.",
+    tech: ["Unity", "C#", "Combo System", "Hitbox / Hurtbox System", "Enemy AI"],
+    features: ["Punch, Kick & Special Combo Mechanics", "Dynamic Enemy Brawler AI", "Destructible Objects & Pickups", "Smooth Combat Animations"]
+  },
+  {
+    title: "Stunt Bike Game",
+    image: "images/StuntBike.png",
+    videos: ["https://www.youtube.com/embed/YOUR_STUNT_BIKE_YOUTUBE_ID"],
+    overview: "Side-scrolling physics-based stunt bike game challenging players to navigate rough terrain and obstacle-filled tracks.",
+    tech: ["Unity 2D/3D", "C#", "2D Wheel Joint Physics", "Ragdoll Physics", "Level Design"],
+    features: ["Physics-Based Bike Balance & Tilting", "Challenging Stunt Ramps & Obstacles", "Score & Coin Collection System", "Dynamic Crash & Ragdoll Mechanics"]
+  },
+  {
+    title: "FPS Shooting Game (Find Scientist)",
+    image: "images/FpsShooting.jpg",
+    videos: ["https://www.youtube.com/embed/YOUR_FPS_SHOOTING_YOUTUBE_ID"],
+    overview: "Intense tactical first-person shooter where the player infiltrates enemy territory on an extraction mission to locate and rescue a scientist.",
+    tech: ["Unity 3D", "C#", "NavMesh Patrol AI", "Gunplay Mechanics", "Objective System"],
+    features: ["Scientist Search & Extraction Objectives", "Gunplay with Recoil & Scope Zoom", "Patrolling & Alert Enemy AI", "Helicopter Extraction Sequence"]
+  },
+  {
+    title: "Life at Prison",
+    image: "images/Life_at_prison.jpg",
+    videos: [
+      "https://www.youtube.com/embed/YOUR_FIRST_PRISON_YOUTUBE_ID",
+      "https://www.youtube.com/embed/YOUR_SECOND_PRISON_YOUTUBE_ID"
+    ],
+    overview: "Third-person controller simulation game where players navigate prison life and complete diverse mission tasks.",
+    tech: ["Unity 3D", "C#", "Third Person Controller", "Mission/Task System", "NavMesh AI"],
+    features: ["Responsive 3rd-Person Movement & Camera", "Interactive Task & Quest Objectives", "Guard & Inmate AI Systems", "Immersive Prison Environment"]
+  },
+  {
     title: "Car Fighting Arena",
     image: "images/CarFighting.png",
-    video: "https://www.youtube.com/embed/-3sYiJjYuyE",
+    videos: ["https://www.youtube.com/embed/-3sYiJjYuyE"],
     overview: "Fast-paced vehicular combat game set in dynamic battle arenas.",
     tech: ["Unity 3D", "C#", "Vehicle Physics", "Combat AI", "Particle Systems"],
     features: ["Customizable Combat Vehicles", "Arena Destruction & Hazards", "Intelligent Opponent AI", "Explosive Weapon Systems"]
@@ -277,7 +312,7 @@ const projects = [
   {
     title: "Alien Robot FPS",
     image: "images/AlienRobotFps.jpg",
-    video: "https://www.youtube.com/embed/tyjKr6HNh_U",
+    videos: ["https://www.youtube.com/embed/tyjKr6HNh_U"],
     overview: "Action-packed sci-fi first-person shooter fighting robotic and alien waves.",
     tech: ["Unity 3D", "C#", "NavMesh AI", "Weapon System", "Animation Rigging"],
     features: ["Responsive FPS Controller", "Diverse Enemy AI Behaviors", "Weapon Arsenal & Recoil", "Rescue & Mission Objectives"]
@@ -285,7 +320,7 @@ const projects = [
   {
     title: "Car Racing Game (Mega Beam Stunts)",
     image: "images/Mega_Beam_Stunts.jpg",
-    video: "https://www.youtube.com/embed/ZRoh62B-z1o",
+    videos: ["https://www.youtube.com/embed/ZRoh62B-z1o"],
     overview: "High-octane stunt racing game featuring ramps, loops, and realistic physics.",
     tech: ["Unity 3D", "C#", "Custom Vehicle Controller", "Optimization"],
     features: ["Extreme Stunt Tracks", "Realistic Crash & Drift Physics", "Vehicle Selection & Garage", "High-Speed Performance Optimization"]
@@ -293,10 +328,18 @@ const projects = [
   {
     title: "Exorium Spaceship Shooter",
     image: "images/SpaceShip.png",
-    video: "https://www.youtube.com/embed/iCFVcl1c7z4",
+    videos: ["https://www.youtube.com/embed/iCFVcl1c7z4"],
     overview: "Multiplayer space combat game with competitive gameplay.",
     tech: ["Unity", "C#", "Photon Pun2", "Shader Graph"],
     features: ["Weapon system", "Multiplayer", "Lobby system", "Spaceship Selection"]
+  },
+  {
+    title: "Cyber Battle",
+    image: "images/cyber.jpg",
+    videos: [],
+    overview: "NFT based space shooter game.",
+    tech: ["Unity", "Web3"],
+    features: ["NFT ships", "Wallet login"]
   }
 ];
 
@@ -313,12 +356,12 @@ function renderProjects() {
       <ul class="desc">
         ${p.features.map(f => `<li>${f}</li>`).join("")}
       </ul>
-      ${p.video ? `
+      ${p.videos && p.videos.length > 0 ? p.videos.map(v => `
         <div class="video-container">
-          <iframe src="${p.video}" frameborder="0"
+          <iframe src="${v}" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
-        </div>` : ""}
+        </div>`).join("") : ""}
     </div>
   `).join("");
 }
