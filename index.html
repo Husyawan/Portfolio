@@ -75,19 +75,6 @@
     .whatsapp { background: #25D366; color: white; }
     .resume    { background: #22d3ee; color: #0b0f1a; }
 
-    /* EXPERIENCE */
-    .exp-list { list-style: none; padding: 0; margin: 0; }
-    .exp-item {
-      border-left: 3px solid #22d3ee;
-      padding: 14px 18px;
-      margin-bottom: 20px;
-      background: #0d1525;
-      border-radius: 0 10px 10px 0;
-    }
-    .exp-item h3 { margin: 0 0 4px; font-size: 1rem; color: #22d3ee; }
-    .exp-meta { font-size: 12px; color: #888; margin-bottom: 8px; }
-    .exp-item ul { margin: 6px 0 0 0; padding-left: 18px; color: #ccc; font-size: 13.5px; line-height: 1.7; }
-
     /* PROJECTS */
     .section-title {
       font-size: 1.4rem;
@@ -193,77 +180,11 @@
     </div>
   </section>
 
-  <!-- EXPERIENCE -->
-  <section class="about">
-    <div class="about-container" style="flex-direction:column; align-items:flex-start;">
-      <h2 style="margin:0 0 20px; color:#fff;">Experience</h2>
-      <ul class="exp-list" style="width:100%;">
-
-        <li class="exp-item">
-          <h3>Senior Unity Developer — Fiverr Freelancer</h3>
-          <div class="exp-meta">July 2024 – Present &nbsp;|&nbsp; Remote</div>
-          <ul>
-            <li>Delivered diverse projects for international clients — multiplayer, AR/VR, and optimization.</li>
-            <li>Proficient in Fusion 2 (Shared Mode, Host/Client, Server/Client), Photon PUN 2 &amp; Mirror Networking.</li>
-            <li>Developed AR/VR applications with immersive gameplay mechanics.</li>
-            <li>Worked on TCG Engine-based card games with advanced game logic.</li>
-            <li>Specialized in game optimization to enhance performance across devices.</li>
-            <li>Implemented monetization strategies — Applovin, AdMob, and Unity Ads.</li>
-            <li>Developed SDKs for seamless integration into various projects.</li>
-            <li>Contributed to Metaverse-related projects — virtual environments &amp; digital interactions.</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <h3>Senior Unity Developer — Arhamsoft</h3>
-          <div class="exp-meta">Oct 2022 – Jul 2024 &nbsp;|&nbsp; Onsite</div>
-          <ul>
-            <li><strong>MetaMuto Metaverse:</strong> Furniture customization, Mirror Networking multiplayer/chat, Crypto Smart Contract (ChainSafe SDK), mini-games.</li>
-            <li><strong>Deskillz SDK:</strong> Unity SDK for Android Native platform — both single player and Photon multiplayer variants.</li>
-            <li><strong>AR Face Recognition:</strong> Captured face expressions via ARKit, JSON clips, blendshape mapping on 2D sprites.</li>
-            <li><strong>Doctor Piercing:</strong> Single-handedly built from scratch — all mechanics, gameplay, and systems.</li>
-            <li><strong>Car Fighting Arena:</strong> It’s a car combat game set in an arena where players can race and battle against each other. The game delivers high levels of excitement and immersive entertainment throughout the experience.</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <h3>Lead Unity Developer — Pen and Web</h3>
-          <div class="exp-meta">Jun 2022 – Oct 2022</div>
-          <ul>
-            <li>Led the technical team.</li>
-            <li>Worked on Mirror Networking and Photon for multiplayer 3D WebGL games with Blockchain integration.</li>
-            <li>Shipped 3D games on Play Store and iOS.</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <h3>Lead Unity Developer — Devbatch</h3>
-          <div class="exp-meta">Jun 2021 – May 2022</div>
-          <ul>
-            <li>Led the technical team and managed project timelines.</li>
-            <li>Multiplayer games, simulation, and shooting games.</li>
-            <li>Managed Google Play &amp; iOS store operations.</li>
-          </ul>
-        </li>
-
-        <li class="exp-item">
-          <h3>Junior Unity Developer — MizoStudio</h3>
-          <div class="exp-meta">Aug 2019 – May 2021</div>
-          <ul>
-            <li>3D robot games, house design games, environment design (terrain), particle systems.</li>
-            <li>Navmesh AI, joints, physics, animator, ads integration, APK size optimization.</li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-  </section>
-
   <!-- PROJECTS -->
   <h2 class="section-title">Projects</h2>
   <div id="projects" class="grid"></div>
 
 </div>
-
 <script>
 const projects = [
   {
@@ -332,8 +253,7 @@ const projects = [
     overview: "High-octane stunt racing game featuring ramps, loops, and realistic physics.",
     tech: ["Unity 3D", "C#", "Custom Vehicle Controller", "Optimization"],
     features: ["Extreme Stunt Tracks", "Realistic Crash & Drift Physics", "Vehicle Selection & Garage", "High-Speed Performance Optimization"]
-  },
-  
+  }
 ];
 
 function renderProjects() {
@@ -344,14 +264,14 @@ function renderProjects() {
       <h3>${p.title}</h3>
       <div class="meta">${p.overview}</div>
       <div class="tags">
-        ${p.tech.map(t => `<span class="tag">${t}</span>`).join("")}
+        ${p.tech.map(t => `<span class="tag">\${t}</span>`).join("")}
       </div>
       <ul class="desc">
-        ${p.features.map(f => `<li>${f}</li>`).join("")}
+        ${p.features.map(f => `<li>\${f}</li>`).join("")}
       </ul>
       ${p.videos && p.videos.length > 0 ? p.videos.map(v => `
         <div class="video-container">
-          <iframe src="${v}" frameborder="0"
+          <iframe src="\${v}" frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         </div>`).join("") : ""}
@@ -361,6 +281,5 @@ function renderProjects() {
 
 renderProjects();
 </script>
-
 </body>
 </html>
